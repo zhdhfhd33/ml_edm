@@ -16,5 +16,6 @@ all = [
     "ECEC",
     "ECDIRE", 
     "CALIMERA", 
-    "EDSC"
+    "EDSC".
+    "TimestampThreshold"
 ]
