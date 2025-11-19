@@ -13,6 +13,7 @@ from .features_engineering.features_extraction import Feature_extractor
 #from ..utils import *
 
 from warnings import warn
+from tqdm import tqdm
 
 # TODO : Multivariate data
 # TODO : Enrich / change feature extraction
@@ -139,7 +140,10 @@ class ClassifiersCollection(BaseTimeClassifier):
 
         # FEATURE EXTRACTION AND FITTING
         self.extractors = []
-        for i, ts_length in enumerate(self.timestamps):
+        for i, ts_length in tqdm(enumerate(self.timestamps), 
+                                  total=len(self.timestamps),
+                                  desc="Training classifiers",
+                                  unit="model"):
             Xt = X[:, :ts_length]
             if self.feature_extraction:
                 scale = True if self.feature_extraction['method'] == 'minirocket' else False
