@@ -5,7 +5,7 @@ from ._teaser import TEASER
 from ._ecec import ECEC
 from ._ecdire import ECDIRE
 from ._calimera import CALIMERA
-from ._timestamp_threshold.py import TimestampThreshold
+from ._timestamp_threshold import TimestampThreshold
 
 
 from ._edsc import EDSC
